@@ -48,21 +48,40 @@ For a deeper dive into the mathematical derivations and literature review, the f
 
 [![Read Full Report](https://img.shields.io/badge/Read%20Full%20Paper-PDF-red?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/ziyi-mateo-wu/Time-Series-Forecasting-with-ARIMA-GARCH-Models/blob/main/individual%20project/FIN3018_Individual_Report_S.pdf)
 
-### 📉 Detailed Visualizations
+### 📉 Empirical Evidence & Visual Diagnostics
+
+The following visualizations document the rigorous statistical validation process, confirming the transition from raw data to a validated GARCH framework.
 
 <details>
 <summary>
-  <img src="https://img.shields.io/badge/CLICK_HERE_TO_EXPAND-CHARTS_%26_VISUALIZATIONS-FF4500?style=for-the-badge&logo=google-analytics&logoColor=white" alt="Click to Expand">
+  <img src="https://img.shields.io/badge/CLICK_HERE_TO_EXPAND-EMPIRICAL_%26_DIAGNOSTIC_PLOTS-FF4500?style=for-the-badge&logo=google-analytics&logoColor=white" alt="Click to Expand">
 </summary>
 <br>
 
-#### 1. Volatility Forecast with Confidence Cones
-Visualizing the conditional sigma (risk) projection for S&P 500 Industrials.
-<img width="100%" alt="Volatility Forecast" src="forecast_plot.png" />
+#### 1. Stylized Facts: The Necessity of Transformation
+**Observation:** The raw S&P 500 Industrials index (Top) exhibits a non-stationary upward trend ($d=1$). After differencing, the **Log Returns** (Bottom) oscillate around zero ($d=0$), fulfilling the stationarity requirement for ARIMA modeling, yet revealing distinct **Volatility Clustering** (heteroscedasticity).
+<img width="100%" alt="Time Series Decomposition" src="01_ts_plot.png" />
 
-#### 2. Residual Diagnostics
-Confirming the "White Noise" property of residuals (No significant autocorrelation).
-<img width="100%" alt="Residual Diagnostics" src="residual_diagnostics.png" />
+<br>
+
+#### 2. Serial Correlation Analysis (ACF/PACF)
+**Diagnostic:** The Autocorrelation Function (ACF) of squared returns shows significant spikes, rejecting the Null Hypothesis of independence. This explicitly confirms the presence of **ARCH effects** (autoregressive conditional heteroscedasticity), validating the rejection of simple OLS in favor of a GARCH specification.
+<img width="100%" alt="ACF PACF Analysis" src="02_acf_pacf.png" />
+
+<br>
+
+#### 3. Model Validation: Residual Diagnostics
+**Verification:** Post-estimation analysis of the ARIMA-GARCH residuals.
+* **Standardized Residuals:** Conform to a White Noise process.
+* **QQ-Plot:** The Student-t distribution (blue line) fits the empirical data tails significantly better than the Normal distribution, accounting for the asset's **Leptokurtic (Fat Tail)** nature.
+* **Ljung-Box Test:** The resulting p-value of **0.7028** confirms no remaining autocorrelation.
+<img width="100%" alt="Residual Diagnostics and QQ Plot" src="03_diagnostics.png" />
+
+<br>
+
+#### 4. The Risk Cone: 10-Day Volatility Forecast
+**Outcome:** Unlike the static mean forecast, the Variance Equation produces a dynamic risk envelope. The widening **95% Confidence Intervals** ($\pm 1.96 \hat{\sigma}_{t+h}$) visually quantify the increasing uncertainty over the forecast horizon.
+<img width="100%" alt="Volatility Forecast" src="04_forecast.png" />
 
 <br>
 <p align="center">
