@@ -48,29 +48,24 @@ For a deeper dive into the mathematical derivations and literature review, the f
 
 [![Read Full Report](https://img.shields.io/badge/Read%20Full%20Paper-PDF-red?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/ziyi-mateo-wu/Time-Series-Forecasting-with-ARIMA-GARCH-Models/blob/main/individual%20project/FIN3018_Individual_Report_S.pdf)
 
+---
+
 ### 📉 Empirical Evidence & Visual Diagnostics
 
 The following visualizations document the rigorous statistical validation process, confirming the transition from raw data to a validated GARCH framework.
 
-<details>
-<summary>
-  <img src="https://img.shields.io/badge/CLICK_HERE_TO_EXPAND-EMPIRICAL_%26_DIAGNOSTIC_PLOTS-FF4500?style=for-the-badge&logo=google-analytics&logoColor=white" alt="Click to Expand">
-</summary>
-<br>
-
 #### 1. Stylized Facts: The Necessity of Transformation
 **Observation:** The raw S&P 500 Industrials index (Top) exhibits a non-stationary upward trend ($d=1$). After differencing, the **Log Returns** (Bottom) oscillate around zero ($d=0$), fulfilling the stationarity requirement for ARIMA modeling, yet revealing distinct **Volatility Clustering** (heteroscedasticity).
-<img width="1037" height="773" alt="image" src="https://github.com/user-attachments/assets/69c70837-acca-4270-99ad-4978ef678dcf" />
 
+<img width="1037" alt="Time Series Decomposition" src="https://github.com/user-attachments/assets/69c70837-acca-4270-99ad-4978ef678dcf" />
 
 <br>
 
 #### 2. Serial Correlation Analysis (ACF/PACF)
 **Diagnostic:** The Autocorrelation Function (ACF) of squared returns shows significant spikes, rejecting the Null Hypothesis of independence. This explicitly confirms the presence of **ARCH effects** (autoregressive conditional heteroscedasticity), validating the rejection of simple OLS in favor of a GARCH specification.
-<img width="1037" height="773" alt="image" src="https://github.com/user-attachments/assets/cc07e3b8-ccc1-46bd-9c0e-d0181fe177a0" />
-<img width="1037" height="773" alt="image" src="https://github.com/user-attachments/assets/b4b467a5-da0e-4015-81f4-c9d18aa9b380" />
 
-
+<img width="1037" alt="ACF Plot" src="https://github.com/user-attachments/assets/cc07e3b8-ccc1-46bd-9c0e-d0181fe177a0" />
+<img width="1037" alt="PACF Plot" src="https://github.com/user-attachments/assets/b4b467a5-da0e-4015-81f4-c9d18aa9b380" />
 
 <br>
 
@@ -79,25 +74,19 @@ The following visualizations document the rigorous statistical validation proces
 * **Standardized Residuals:** Conform to a White Noise process.
 * **QQ-Plot:** The Student-t distribution (blue line) fits the empirical data tails significantly better than the Normal distribution, accounting for the asset's **Leptokurtic (Fat Tail)** nature.
 * **Ljung-Box Test:** The resulting p-value of **0.7028** confirms no remaining autocorrelation.
-<img width="1037" height="773" alt="image" src="https://github.com/user-attachments/assets/7bb0205e-fdf3-4c37-b945-44ec8f11be5a" />
 
+<img width="1037" alt="Residual Diagnostics" src="https://github.com/user-attachments/assets/7bb0205e-fdf3-4c37-b945-44ec8f11be5a" />
 
 <br>
 
 #### 4. The Risk Cone: 10-Day Volatility Forecast
 **Outcome:** Unlike the static mean forecast, the Variance Equation produces a dynamic risk envelope. The widening **95% Confidence Intervals** ($\pm 1.96 \hat{\sigma}_{t+h}$) visually quantify the increasing uncertainty over the forecast horizon.
-<img width="1037" height="773" alt="image" src="https://github.com/user-attachments/assets/e5f050d8-ca1a-40cd-8a0b-bdb01d445071" />
 
+<img width="1037" alt="Forecast Plot" src="https://github.com/user-attachments/assets/e5f050d8-ca1a-40cd-8a0b-bdb01d445071" />
 
 <br>
-<p align="center">
-  <a href="sp500_garch_volatility.R">
-    <img src="[https://img.shields.io/badge/View_R_Source_Code-.R_File-blue?style=for-the-badge&logo=r](https://github.com/ziyi-mateo-wu/Time-Series-Forecasting-with-ARIMA-GARCH-Models/blob/main/individual%20project/FIN3018_Individual_Script_S_.R)" alt="View Code">
-     
-  </a>
-</p>
 
-</details>
+[![View Code](https://img.shields.io/badge/View_R_Source_Code-.R_File-blue?style=for-the-badge&logo=r)](https://github.com/ziyi-mateo-wu/Time-Series-Forecasting-with-ARIMA-GARCH-Models/blob/main/individual%20project/FIN3018_Individual_Script_S_.R)
 
 ---
 
