@@ -60,13 +60,17 @@ The following visualizations document the rigorous statistical validation proces
 
 #### 1. Stylized Facts: The Necessity of Transformation
 **Observation:** The raw S&P 500 Industrials index (Top) exhibits a non-stationary upward trend ($d=1$). After differencing, the **Log Returns** (Bottom) oscillate around zero ($d=0$), fulfilling the stationarity requirement for ARIMA modeling, yet revealing distinct **Volatility Clustering** (heteroscedasticity).
-<img width="100%" alt="Time Series Decomposition" src="01_ts_plot.png" />
+<img width="1037" height="773" alt="image" src="https://github.com/user-attachments/assets/69c70837-acca-4270-99ad-4978ef678dcf" />
+
 
 <br>
 
 #### 2. Serial Correlation Analysis (ACF/PACF)
 **Diagnostic:** The Autocorrelation Function (ACF) of squared returns shows significant spikes, rejecting the Null Hypothesis of independence. This explicitly confirms the presence of **ARCH effects** (autoregressive conditional heteroscedasticity), validating the rejection of simple OLS in favor of a GARCH specification.
-<img width="100%" alt="ACF PACF Analysis" src="02_acf_pacf.png" />
+<img width="1037" height="773" alt="image" src="https://github.com/user-attachments/assets/cc07e3b8-ccc1-46bd-9c0e-d0181fe177a0" />
+<img width="1037" height="773" alt="image" src="https://github.com/user-attachments/assets/b4b467a5-da0e-4015-81f4-c9d18aa9b380" />
+
+
 
 <br>
 
@@ -75,13 +79,15 @@ The following visualizations document the rigorous statistical validation proces
 * **Standardized Residuals:** Conform to a White Noise process.
 * **QQ-Plot:** The Student-t distribution (blue line) fits the empirical data tails significantly better than the Normal distribution, accounting for the asset's **Leptokurtic (Fat Tail)** nature.
 * **Ljung-Box Test:** The resulting p-value of **0.7028** confirms no remaining autocorrelation.
-<img width="100%" alt="Residual Diagnostics and QQ Plot" src="03_diagnostics.png" />
+<img width="1037" height="773" alt="image" src="https://github.com/user-attachments/assets/7bb0205e-fdf3-4c37-b945-44ec8f11be5a" />
+
 
 <br>
 
 #### 4. The Risk Cone: 10-Day Volatility Forecast
 **Outcome:** Unlike the static mean forecast, the Variance Equation produces a dynamic risk envelope. The widening **95% Confidence Intervals** ($\pm 1.96 \hat{\sigma}_{t+h}$) visually quantify the increasing uncertainty over the forecast horizon.
-<img width="100%" alt="Volatility Forecast" src="04_forecast.png" />
+<img width="1037" height="773" alt="image" src="https://github.com/user-attachments/assets/e5f050d8-ca1a-40cd-8a0b-bdb01d445071" />
+
 
 <br>
 <p align="center">
