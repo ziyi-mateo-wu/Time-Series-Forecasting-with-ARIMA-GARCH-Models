@@ -92,7 +92,8 @@ The following visualizations document the rigorous statistical validation proces
 <br>
 <p align="center">
   <a href="sp500_garch_volatility.R">
-    <img src="https://img.shields.io/badge/View_R_Source_Code-.R_File-blue?style=for-the-badge&logo=r" alt="View Code">
+    <img src="[https://img.shields.io/badge/View_R_Source_Code-.R_File-blue?style=for-the-badge&logo=r](https://github.com/ziyi-mateo-wu/Time-Series-Forecasting-with-ARIMA-GARCH-Models/blob/main/individual%20project/FIN3018_Individual_Script_S_.R)" alt="View Code">
+     
   </a>
 </p>
 
