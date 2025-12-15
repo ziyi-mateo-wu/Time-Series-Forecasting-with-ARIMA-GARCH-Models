@@ -46,7 +46,7 @@ The workflow follows strict econometric standards:
 
 For a deeper dive into the mathematical derivations and literature review, the full academic report is available below.
 
-[![Read Full Report](https://img.shields.io/badge/Read%20Full%20Paper-PDF-red?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](Volatility_Modeling_Report.pdf)
+[![Read Full Report](https://github.com/ziyi-mateo-wu/Time-Series-Forecasting-with-ARIMA-GARCH-Models/blob/main/individual%20project/FIN3018_Individual_Report_S.pdf)
 
 ---
 
